@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Song List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #111;
+    }
+
+    header {
+      background: #128c7e;
+      color: white;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    button, .song-link {
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 10px 0;
+      font-size: 17px;
+      cursor: pointer;
+      text-align: left;
+      background: #25d366;
+      color: white;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: #128c7e;
+      text-align: center;
+    }
+
+    .song-page {
+      display: none;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Congregation Songs</h1>
+    <p>Click a song to open it</p>
+  </header>
+
+  <main class="container">
+    <section id="menu" class="card">
+      <h2>Song Menu</h2>
+      <button onclick="openSong('song1')">Song 1 - 10,000 Reasons</button>
+      <button onclick="openSong('song2')">Song 2 - What a Friend We Have in Jesus</button>
+      <button onclick="openSong('song3')">Song 3 - Karthave Devargalil</button>
+      <button onclick="openSong('song4')">Song 4 - Yehova Yire / Neeve Chaalunu</button>
+    </section>
+
+    <section id="song1" class="song-page card">
+      <h2>Song 1 - 10,000 Reasons</h2>
+      <pre>
+Bless the Lord O my soul, O my soul;
+Worship His holy name.
+Sing like never before, O my soul;
+I'll worship Your holy
+      <button class="back-button" onclick="backToMenu()">Back to menu</button>
+    </section>
+
+    <section id="song2" class="song-page card">
+      <h2>Song 2 - What a Friend We Have in Jesus</h2>
+      <pre>
+What a friend we have in Jesus
+All our sins and griefs to bear
+What a privilege to carry
+Everything to God in prayer
+
+O what peace we often forfeit
+O what needless pain we bear
+All because we do not carry
+Everything to God
+      <button class="back-button" onclick="backToMenu()">Back to menu</button>
+    </section>
+
+    <section id="song3" class="song-page card">
+      <h2>Song 3 - Karthave Devargalil</h2>
+      <pre>
+Karthave devargalil umakkoppanavar yaar
+Vaanaththilum boomiyilum umakkoppanavar yaar (2)
+Umakkoppanavar yaar
+Vaanaththilum boomiyilum umakkoppanavar yaar
+
+1. Sengadalai neer pilandhu
+Undhan janangalai nadathichchendreer
+Neer nallavar sarva vallavar
+Endrum vaakku maarathavar (2)
+
+2. Thoodhargal unnum unavaal
+Undhan janangalai poshitheere (2)
+Ummaip pola yaarundu
+Indha janangalai nesiththida (2)
+
+3. Kanmalaiyai neer pilandhu
+Undhan janangalin thaagam theerththeer (2)
+Um naamam adhisayam
+Indrum arputham seidhuveer (2)
+      </pre>
+      <button class="back-button" onclick="backToMenu()">Back to menu</button>
+    </section>
+
+    <section id="song4" class="song-page card">
+      <h2>Song 4 - Yehova Yire / Neeve Chaalunu</h2>
+      <pre>
+Hindi
+
+Yehova Yire Data Mere Tu Kaafi Hai Mere Liye
+Yehova Rapha Tu Karta Changa
+Mili Changayi Tere Ghaav Se
+Yehova Shamma Tu Sang Rehta
+Har Zarurat Poori Karta Hai
+Tu Kaafi Hai..Tu Kaafi Hai
+Tu Kaafi Hai Mere Liye
+Tu Kaafi Hai.Tu Kaafi Hai Tu Kaafi Hai Mere Liye ||
+
+Malayalam
+
+Yahova Rohi
+Ente Idayan y&da
+Enne Vazhi Nadathidunnavan
+Valli
+Yahova Elshaddaay
+Shakthi Nalkunnon
+Sarvvashakthanaam Daivamavan
+Yahova El Gibor
+Aadhipathyam Ullavan
+Avan Athbhutha Manthriyallo
+Nee Maathram Mathi
+Nee Maathram Mathi
+Nee Maathram Mathi Enikk || 2 ||
+
+Telugu
+
+Yehovah Yere naa poshakudavu
+Neeve chaalunu naaku..
+Yehovah Rapha swasthanichhunu
+Thana gaayamulalo swasthatha..
+Yehovah Shamma Thodai yundunu
+Naa avasaralanu theerchunu..
+Neeve chaalunu..
+Neeve chaalunu..
+Neeve chaalunu naaku.. || 2 ||
+      </pre>
+      <button class="back-button" onclick="backToMenu()">Back to menu</button>
+    </section>
+  </main>
+
+  <script>
+    function openSong(songId) {
+      document.getElementById('menu').style.display = 'none';
+      document.querySelectorAll('.song-page').forEach(page => {
+        page.style.display = 'none';
+      });
+      document.getElementById(songId).style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    function backToMenu() {
+      document.querySelectorAll('.song-page').forEach(page => {
+        page.style.display = 'none';
+      });
+      document.getElementById('menu').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
